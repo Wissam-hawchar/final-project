@@ -1,0 +1,26 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" [opened]="sideopened">
+        <mat-nav-list>
+            <mat-list-item routerLink="dashboard" >
+                <mat-icon>dashboard</mat-icon><span class="center">Dashboard</span>
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-expansion-panel [class.mat-elevation-z0]="true">
+            <mat-expansion-panel-header>
+                Mobile Phone
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <a mat-list-item routerLink="ios">
+                    <mat-icon>apple</mat-icon><span>iOS</span>
+                </a>
+                <a mat-list-item routerLink="android">
+                    <mat-icon>android</mat-icon><span>Android</span>
+                </a>
+            </mat-nav-list>
+        </mat-expansion-panel>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <ng-content></ng-content>
+    </mat-drawer-content>
+  </mat-drawer-container>

@@ -1,0 +1,19 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<mat-toolbar class="toolcolor">
+    <button *ngIf="!opened" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openside()" >
+      <mat-icon >menu</mat-icon>
+    </button>
+    <button *ngIf="opened" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openside()" >
+      <span class="material-icons">
+        close
+        </span>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button (click)="logoutAction()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <span class="material-icons">
+        logout
+        </span>
+    </button>
+</mat-toolbar>
