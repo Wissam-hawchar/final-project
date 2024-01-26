@@ -18,6 +18,10 @@ import { CoupensComponent } from './components/coupens/coupens.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { MediaComponent } from './components/media/media.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { ProductAddEditComponent } from './components/product-add-edit/product-add-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     CoupensComponent,
     PagesComponent,
     MediaComponent,
-    SettingsComponent
+    SettingsComponent,
+    ProductAddEditComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
