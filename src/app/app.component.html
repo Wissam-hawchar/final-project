@@ -3,8 +3,9 @@
 </div>
 
 <div *ngIf="isloggedin()" style="height: 100%;">
-<app-toolbar [opened]="sideopened" (issideopened)="openside($event)"></app-toolbar>
-<app-sidenav [sideopened]="sideopened">
-  <router-outlet></router-outlet>
-</app-sidenav>
+<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+></app-body>
 </div>

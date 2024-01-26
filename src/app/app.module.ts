@@ -11,6 +11,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SharedModule } from './shared/shared.module';
+import { BodyComponent } from './components/body/body.component';
+import { ProductsComponent } from './components/products/products.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { CoupensComponent } from './components/coupens/coupens.component';
+import { PagesComponent } from './components/pages/pages.component';
+import { MediaComponent } from './components/media/media.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,14 @@ import { SharedModule } from './shared/shared.module';
     RegisterComponent,
     DashboardComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    BodyComponent,
+    ProductsComponent,
+    StatisticsComponent,
+    CoupensComponent,
+    PagesComponent,
+    MediaComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

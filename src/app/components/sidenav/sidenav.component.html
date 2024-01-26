@@ -1,26 +1,33 @@
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" [opened]="sideopened">
-        <mat-nav-list>
-            <mat-list-item routerLink="dashboard" >
-                <mat-icon>dashboard</mat-icon><span class="center">Dashboard</span>
-            </mat-list-item>
-        </mat-nav-list>
-        <mat-expansion-panel [class.mat-elevation-z0]="true">
-            <mat-expansion-panel-header>
-                Mobile Phone
-            </mat-expansion-panel-header>
-            <mat-nav-list>
-                <a mat-list-item routerLink="ios">
-                    <mat-icon>apple</mat-icon><span>iOS</span>
-                </a>
-                <a mat-list-item routerLink="android">
-                    <mat-icon>android</mat-icon><span>Android</span>
-                </a>
-            </mat-nav-list>
-        </mat-expansion-panel>
-    </mat-drawer>
-
-    <mat-drawer-content>
-        <ng-content></ng-content>
-    </mat-drawer-content>
-  </mat-drawer-container>
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">
+            <i class="fal fa-solid fa-bars"></i>
+        </button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Techtore</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" 
+                [routerLink]="[data.routeLink]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+            >
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    {{data.label}}
+                </span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item">
+        
+                    <button (click)="logoutAction()" mat-icon-button class="button-size">
+                        <svg class="button-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/></svg>
+                        <span class="button-text" @fadeInOut *ngIf="collapsed">Log Out</span>
+                    </button>
+            
+        </li>
+    </ul>
+</div>
