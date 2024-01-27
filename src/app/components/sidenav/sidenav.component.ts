@@ -47,7 +47,8 @@ export class SidenavComponent implements OnInit{
   constructor(public userAuthService: UserAuthService, 
               private router: Router,
               public translate: TranslateService) {
-                
+                this.translate.addLangs(['en', 'fr','ar']);
+                this.translate.setDefaultLang('en');
 
               }
 
