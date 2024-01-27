@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDialogModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

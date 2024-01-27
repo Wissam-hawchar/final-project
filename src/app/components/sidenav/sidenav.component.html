@@ -3,10 +3,18 @@
         <button class="logo" (click)="toggleCollapse()">
             <i class="fal fa-solid fa-bars"></i>
         </button>
-        <div class="logo-text" @fadeInOut *ngIf="collapsed">Techtore</div>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">{{ 'Techtore' | translate:param }}</div>
         <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
             <i class="fal fa-times close-icon"></i>
         </button>
+        <span class="form-inline">
+            <select class="form-control" #selectedLang (change)="switchLang(selectedLang.value)">
+              <option *ngFor="let language of translate.getLangs()" [value]="language"
+                [selected]="language === translate.currentLang">
+                {{ language }}
+              </option>
+            </select>
+          </span>
     </div>
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">

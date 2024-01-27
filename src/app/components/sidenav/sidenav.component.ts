@@ -3,6 +3,8 @@ import { navbarData } from './nav-data';
 import { animate, animation, keyframes, style, transition, trigger } from '@angular/animations';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
 
 interface SideNavToggle{
   screenWidth: number;
@@ -40,8 +42,14 @@ interface SideNavToggle{
   ]
 })
 export class SidenavComponent implements OnInit{
+  param = {value: 'world'};
   
-  constructor(public userAuthService: UserAuthService, private router: Router) {}
+  constructor(public userAuthService: UserAuthService, 
+              private router: Router,
+              public translate: TranslateService) {
+                
+
+              }
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> =new EventEmitter();
   collapsed=false;
@@ -79,5 +87,9 @@ export class SidenavComponent implements OnInit{
   closeSidenav(): void{
     this.collapsed=false;
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
 }

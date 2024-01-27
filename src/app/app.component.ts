@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 interface SideNavToggle{
   screenWidth: number;
@@ -11,7 +12,10 @@ interface SideNavToggle{
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor( private router: Router) {}
+  constructor( private router: Router,public translate: TranslateService) {
+    
+    
+  }
 
   title = 'Techtore';
   isloggedin(): boolean{
@@ -30,5 +34,8 @@ export class AppComponent {
   onToggleSideNav(data: SideNavToggle): void{
     this.screenWidth=data.screenWidth;
     this.isSideNavCollapsed=data.collapsed;
+  }
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
 }
