@@ -30,8 +30,8 @@ export const navbarData=[
         label:'Media'
     },
     {
-        routeLink:'settings',
-        icon: 'fal fa-cog',
-        label:'Settings'
+        routeLink:'users',
+        icon: 'fal fa-user',
+        label:'Users'
     }
 ]
